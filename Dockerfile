@@ -29,9 +29,7 @@ RUN echo "Attempting to clone branch: ${BRANCH_NAME} from ${REPO_URL} with CACHE
 
 COPY .docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 
-RUN composer install --no-cache --no-dev \
-    && php artisan storage:link \
-    && chown -R www:www /www \
+RUN chown -R www:www /www \
     && chmod -R 775 /www \
     && mkdir -p /data \
     && chown redis:redis /data
