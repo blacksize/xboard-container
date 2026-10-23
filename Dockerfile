@@ -31,7 +31,6 @@ COPY .docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 COPY .docker/php/xboard.ini /usr/local/etc/php/conf.d/xboard.ini
 
 RUN chown -R www:www /www \
-RUN chown -R www:www /www \
     && chmod -R 775 /www \
     && mkdir -p /data \
     && chown redis:redis /data
